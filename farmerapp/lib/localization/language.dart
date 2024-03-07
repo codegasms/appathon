@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class Language {
   final String name;
   final String flag;
@@ -21,5 +23,15 @@ class Language {
       Language("తెలుగు", "TE", "te"), // Telugu
       Language("اردو", "UR", "ur"), // Urdu
     ];
+  }
+
+  static Language getLanguageType(String name) {
+    for (Language language in languageList()) {
+      if (language.name == name) {
+        return language;
+      }
+    }
+
+    return languageList()[2];
   }
 }
