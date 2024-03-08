@@ -19,14 +19,27 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: <Widget>[
+        body: Column(
+      children: [
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          'Weekly Analytics',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         AspectRatio(
           aspectRatio: 1.70,
           child: Padding(
             padding: const EdgeInsets.only(
-              right: 18,
-              left: 12,
+              right: 0,
+              left: 0,
               top: 24,
               bottom: 12,
             ),
@@ -34,44 +47,105 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
               showAvg ? avgData() : mainData(),
             ),
           ),
+          // child: AnimatedPositionedDirectional(
+          //   duration: const Duration(milliseconds: 500),
+          //   curve: Curves.easeInOut,
+          //   child: LineChart(
+          //     showAvg ? avgData() : mainData(),
+          //   ),
+          // ),
         ),
-        // SizedBox(
-        //   width: 60,
-        //   height: 34,
-        //   child: TextButton(
-        //     onPressed: () {
-        //       setState(() {
-        //         showAvg = !showAvg;
-        //       });
-        //     },
-        //     child: Text(
-        //       'avg',
-        //       style: TextStyle(
-        //         fontSize: 12,
-        //         color: showAvg ? Colors.white.withOpacity(0.5) : Colors.blue,
-        //       ),
-        //     ),
-        //   ),
-        // ),
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          'Todays Production:',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        const Text(
+          '1.33k',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+            color: Color.fromARGB(96, 0, 0, 0),
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          'Monthly Production:',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        const Text(
+          '1.33k',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+            color: Color.fromARGB(96, 0, 0, 0),
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          'Average Daily Production:',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        const Text(
+          '28.33k',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+            color: Color.fromARGB(96, 0, 0, 0),
+          ),
+        )
       ],
     ));
   }
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 16,
+      // fontWeight: FontWeight.bold,
+      fontSize: 13,
     );
     Widget text;
     switch (value.toInt()) {
+      case 1:
+        text = const Text('Mon', style: style);
+        break;
       case 2:
-        text = const Text('MAR', style: style);
+        text = const Text('Tue', style: style);
+        break;
+      case 3:
+        text = const Text('Wed', style: style);
+        break;
+      case 4:
+        text = const Text('Thu', style: style);
         break;
       case 5:
-        text = const Text('JUN', style: style);
+        text = const Text('Fri', style: style);
         break;
-      case 8:
-        text = const Text('SEP', style: style);
+      case 6:
+        text = const Text('Sat', style: style);
+        break;
+      case 7:
+        text = const Text('Sun', style: style);
         break;
       default:
         text = const Text('', style: style);
@@ -158,39 +232,42 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
         border: Border.all(color: const Color(0xff37434d)),
       ),
       minX: 0,
-      maxX: 11,
+      maxX: 8,
       minY: 0,
       maxY: 6,
       lineBarsData: [
         LineChartBarData(
           spots: const [
-            FlSpot(0, 3),
-            FlSpot(2.6, 2),
-            FlSpot(4.9, 5),
-            FlSpot(6.8, 3.1),
-            FlSpot(8, 4),
-            FlSpot(9.5, 3),
-            FlSpot(11, 4),
+            FlSpot(1, 2),
+            FlSpot(2, 5),
+            FlSpot(3, 3.1),
+            FlSpot(4, 4),
+            FlSpot(5, 3),
+            FlSpot(6, 4),
+            FlSpot(7, 3),
           ],
           isCurved: true,
           gradient: LinearGradient(
             colors: gradientColors,
           ),
-          shadow: const Shadow(
-            color: Color.fromARGB(183, 0, 0, 0),
-            blurRadius: 8,
-          ),
+          // shadow: const Shadow(
+          //   color: Color.fromARGB(183, 0, 0, 0),
+          //   blurRadius: 8,
+          // ),
           barWidth: 5,
           isStrokeCapRound: true,
           dotData: const FlDotData(
             show: false,
           ),
           belowBarData: BarAreaData(
-            show: false, // change to true to show the area below the line
-            gradient: LinearGradient(
-              colors: gradientColors
-                  .map((color) => color.withOpacity(0.3))
-                  .toList(),
+            show: true, // change to true to show the area below the line
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              // colors: gradientColors
+              //     .map((color) => color.withOpacity(0.3))
+              //     .toList(),
+              colors: [Color(0xFF50E4FF), Color.fromARGB(0, 255, 255, 255)],
             ),
           ),
         ),

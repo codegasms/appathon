@@ -2,6 +2,7 @@ import 'package:clipboard/clipboard.dart';
 import 'package:farmerapp/pages/home.dart';
 import 'package:farmerapp/pages/subpages/settings/_common_practices.dart';
 import 'package:farmerapp/pages/subpages/settings/other/_tos.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
