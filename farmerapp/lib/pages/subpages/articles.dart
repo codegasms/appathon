@@ -22,12 +22,6 @@ class ArticlesPage extends StatefulWidget {
 }
 
 class _ArticlesPageState extends State<ArticlesPage> {
-  // @override
-  // Widget build(BuildContext context) {
-  //   return const Center(
-  //     child: Text('Articles'),
-  //   );
-  // }
   List<ArticleItem> listTiles = [
     ArticleItem(
       "https://images.pexels.com/photos/2647053/pexels-photo-2647053.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
