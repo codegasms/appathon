@@ -1,4 +1,5 @@
 import 'package:farmerapp/pages/subpages/articles.dart';
+import 'package:farmerapp/pages/subpages/marketplace/buypage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -51,6 +52,24 @@ class _MarketplacePageState extends State<MarketplacePage> {
       "\u20B9 200 ",
     ),
   ];
+
+  TextEditingController productNameController = TextEditingController();
+  TextEditingController productDescriptionController = TextEditingController();
+  TextEditingController sellingPriceController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    productNameController.text = "milk";
+  }
+
+  @override
+  void dispose() {
+    productNameController.dispose();
+    productDescriptionController.dispose();
+    sellingPriceController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,13 +124,13 @@ class _MarketplacePageState extends State<MarketplacePage> {
             // return listWidget(listTiles[index]);
             return InkWell(
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => ArticlePage(
-                //               article: listTiles[index],
-                //               tag: 'article-$index',
-                //             )));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BuyPage(
+                              article: listTiles[index],
+                              tag: 'shop-$index',
+                            )));
               },
               child: listWidget(listTiles[index], index),
             );
@@ -122,14 +141,87 @@ class _MarketplacePageState extends State<MarketplacePage> {
   }
 
   Widget drawSellPage() {
-    return const Center(
-      child: Text('Sell'),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+        child: Column(
+          children: [
+            const Text(
+              "Sell Page",
+              style: TextStyle(fontSize: 20),
+            ),
+            DropdownButtonFormField<String>(
+              value: productNameController.text,
+              onChanged: (value) {
+                setState(() {
+                  productNameController.text = value!;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: "Product Name",
+              ),
+              items: [
+                DropdownMenuItem(
+                  value: "milk",
+                  child: Text("Milk"),
+                ),
+                DropdownMenuItem(
+                  value: "curd",
+                  child: Text("Curd"),
+                ),
+                DropdownMenuItem(
+                  value: "paneer",
+                  child: Text("Paneer"),
+                ),
+                DropdownMenuItem(
+                  value: "butter",
+                  child: Text("Butter"),
+                ),
+                DropdownMenuItem(
+                  value: "ghee",
+                  child: Text("Ghee"),
+                ),
+              ],
+            ),
+            TextFormField(
+              controller: productDescriptionController,
+              decoration: const InputDecoration(
+                labelText: "Product Description",
+              ),
+            ),
+            TextFormField(
+              controller: sellingPriceController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.currency_rupee),
+                labelText: "Desired Selling Price",
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print('''{
+                  item_name: "${productNameController.text}",
+                  item_desc: "${productDescriptionController.text}",
+                  item_price: ${sellingPriceController.text},
+}''');
+                productNameController.clear();
+                productDescriptionController.clear();
+                sellingPriceController.clear();
+              },
+              child: Text("Sell"),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
   Widget listWidget(ArticleItem item, int index) {
     return Hero(
-      tag: 'article-$index',
+      tag: 'shop-$index',
       child: Card(
         semanticContainer: false,
         elevation: 2.0,
