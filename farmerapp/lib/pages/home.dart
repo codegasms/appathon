@@ -69,12 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Articles',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.publish_rounded),
-            label: 'Produce',
+            icon: Icon(Icons.chat),
+            label: 'AI Chat',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.task),
-            label: 'Tasks',
+            icon: Icon(Icons.shopping_cart),
+            label: 'Marketplace',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
