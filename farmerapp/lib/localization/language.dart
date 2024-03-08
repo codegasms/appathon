@@ -34,4 +34,14 @@ class Language {
 
     return languageList()[2];
   }
+
+  static String getLanguageName(String languageCode) {
+    for (Language language in languageList()) {
+      if (language.languageCode == languageCode) {
+        return language.name;
+      }
+    }
+
+    return languageList()[2].name;
+  }
 }
