@@ -2,7 +2,7 @@ import 'package:farmerapp/pages/subpages/analytics.dart';
 import 'package:farmerapp/pages/subpages/articles.dart';
 import 'package:farmerapp/pages/subpages/AIchat.dart';
 import 'package:farmerapp/pages/subpages/profile.dart';
-import 'package:farmerapp/pages/subpages/tasks.dart';
+import 'package:farmerapp/pages/subpages/marketplace.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
     AnalyticsPage(),
     ArticlesPage(),
     AiChatPage(),
-    TasksPage(),
+    MarketplacePage(),
     ProfilePage()
   ];
 
