@@ -34,6 +34,8 @@ def translate_json(json_file_path, languages):
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
             json.dump(translated_data, output_file, ensure_ascii=False, indent=2)
 
+        print(f'Translations updated for {language}')
+
     return f'Translations updated for {languages}'
 
 # Example usage:

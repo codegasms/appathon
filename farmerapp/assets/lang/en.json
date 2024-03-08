@@ -78,5 +78,8 @@
     "user_profile": "User Profile",
     "general": "General",
     "other_settings": "Other Settings",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "chatbot_heading": "Chat With AI Dairy Expert",
+    "chat_disclaimer1": "[ Sorry, Our AI Dairy Expert Understand Only English Language ]",
+    "chat_disclaimer2": "[ We Are Working On It And Will Be Available Soon ]"
 }
