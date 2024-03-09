@@ -6,9 +6,11 @@ import 'package:farmerapp/pages/subpages/profile.dart';
 import 'package:farmerapp/pages/subpages/marketplace.dart';
 import 'package:flutter/material.dart';
 
+/// The home page of the Farmer App.
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.username});
+  const MyHomePage({Key? key, required this.username}) : super(key: key);
 
+  /// The username of the logged-in user.
   final String username;
 
   @override
@@ -23,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const ArticlesPage(),
     const AiChatPage(),
     const MarketplacePage(),
-    const ProfilePage()
+    const ProfilePage(),
   ];
 
   @override
@@ -42,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               "Here are your stats~",
               style: Theme.of(context).textTheme.bodySmall,
-            )
+            ),
           ],
         ),
       ),

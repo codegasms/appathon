@@ -7,12 +7,14 @@ import 'package:farmerapp/pages/home.dart';
 import 'package:farmerapp/localization/controller.dart';
 import 'package:farmerapp/localization/app_localizations.dart';
 
+/// The main entry point of the application.
 void main() {
   runApp(const MyApp());
 }
 
+/// The root widget of the application.
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {

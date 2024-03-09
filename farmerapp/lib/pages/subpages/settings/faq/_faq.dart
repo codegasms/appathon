@@ -4,6 +4,7 @@ import 'package:ionicons/ionicons.dart';
 
 import 'expansion.dart';
 
+/// A page that displays frequently asked questions.
 class FAQPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

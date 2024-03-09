@@ -1,3 +1,20 @@
+/// FILEPATH: /home/SahooBishwajeet/College/AppAThon/appathon/farmerapp/lib/pages/subpages/profile.dart
+///
+/// This file contains the implementation of the [ProfilePage] widget, which represents the user profile page in the app.
+///
+/// The [ProfilePage] widget is a stateful widget that displays the user's profile information and provides various settings options.
+///
+/// The user's profile information includes their name, team name, and appathon details.
+///
+/// The settings options include common practices, FAQ, change language, contact us, send feedback, privacy policy, terms and conditions, and logout.
+///
+/// The [ProfilePage] widget is used in the [HomeScreen] widget to display the user's profile page.
+///
+/// Example usage:
+///
+/// ```dart
+/// ProfilePage(),
+/// ```
 import 'package:clipboard/clipboard.dart';
 import 'package:farmerapp/pages/home.dart';
 import 'package:farmerapp/pages/subpages/settings/_common_practices.dart';

@@ -1,3 +1,21 @@
+/// FILEPATH: /home/SahooBishwajeet/College/AppAThon/appathon/farmerapp/lib/pages/subpages/settings/_account_screen.dart
+///
+/// This file contains the implementation of the `EditAccountScreen` widget, which is a screen for editing user account information.
+/// It includes text fields for name and alternate contact, dropdowns for gender and state/district selection, and a date picker for selecting the date of birth.
+/// The user can make changes to their account information and save the changes by tapping the checkmark icon in the app bar.
+///
+/// The `EditAccountScreen` widget is a stateful widget that maintains the state of the form fields and updates them as the user makes changes.
+/// It also loads the list of states and districts from a JSON file and populates the dropdowns accordingly.
+///
+/// The `EditAccountScreen` widget is used within the settings section of the app.
+///
+/// Example usage:
+///
+/// ```dart
+/// EditAccountScreen(
+///   key: Key('editAccountScreen'),
+/// )
+/// ```
 import 'dart:convert';
 
 import 'package:farmerapp/localization/app_localizations.dart';

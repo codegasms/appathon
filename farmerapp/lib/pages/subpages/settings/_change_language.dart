@@ -1,3 +1,25 @@
+/// FILEPATH: /home/SahooBishwajeet/College/AppAThon/appathon/farmerapp/lib/pages/subpages/settings/_change_language.dart
+///
+/// This file contains the implementation of the [ChangeLanguage] widget, which is responsible for allowing the user to change the app's language.
+/// It provides a dropdown menu to select the desired language and updates the app's locale accordingly.
+///
+/// The [ChangeLanguage] widget is a stateful widget that maintains the selected language and updates the UI when the language is changed.
+/// It uses the [LocaleCont] controller to manage the app's locale and the [AppLocalization] class to retrieve translated strings.
+///
+/// The selected language is stored in the [selectedLanguage] variable, which is initially set to the third language in the [Language.languageList()].
+/// The UI is built using the [Scaffold] widget with an [AppBar] and a [Column] containing the language information and the language selection dropdown.
+///
+/// The [_changeLanguage] method is used to convert the selected language into a [Locale] object based on the language code.
+/// It maps the language code to the corresponding country code and returns the [Locale] object.
+///
+/// The available language codes are defined as constants at the end of the file.
+///
+/// Example usage:
+///
+/// ```dart
+/// ChangeLanguage();
+/// ```
+///
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

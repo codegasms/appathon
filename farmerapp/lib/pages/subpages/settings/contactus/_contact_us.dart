@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'contact_card.dart';
 
+/// A page that displays the contact information of the developers.
 class ContactUsPage extends StatelessWidget {
   final List<ContactCard> developers = [
     ContactCard(
@@ -67,6 +68,7 @@ class ContactUsPage extends StatelessWidget {
   }
 }
 
+/// A widget that displays the contact card of a developer.
 class ContactCardWidget extends StatelessWidget {
   final ContactCard contactCard;
 

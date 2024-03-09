@@ -1,12 +1,15 @@
 import 'package:get/get.dart';
 
+/// Represents a language with its name, flag, and language code.
 class Language {
   final String name;
   final String flag;
   final String languageCode;
 
+  /// Constructs a [Language] object with the given [name], [flag], and [languageCode].
   Language(this.name, this.flag, this.languageCode);
 
+  /// Returns a list of available languages.
   static List<Language> languageList() {
     return [
       Language("অসমীয়া", "AS", "as"), // Assamese
@@ -25,6 +28,7 @@ class Language {
     ];
   }
 
+  /// Returns the [Language] object for the given [name].
   static Language getLanguageType(String name) {
     for (Language language in languageList()) {
       if (language.name == name) {
@@ -35,6 +39,7 @@ class Language {
     return languageList()[2];
   }
 
+  /// Returns the language name for the given [languageCode].
   static String getLanguageName(String languageCode) {
     for (Language language in languageList()) {
       if (language.languageCode == languageCode) {

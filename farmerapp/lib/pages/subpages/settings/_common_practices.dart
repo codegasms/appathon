@@ -2,6 +2,7 @@ import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
+/// A widget that displays common practices.
 class CommonPractices extends StatelessWidget {
   const CommonPractices({super.key});
 

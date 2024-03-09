@@ -1,10 +1,17 @@
 import 'package:farmerapp/pages/subpages/articles.dart';
 import 'package:flutter/material.dart';
 
+/// A page that displays an article.
 class ArticlePage extends StatelessWidget {
   final ArticleItem article;
   final String tag;
-  const ArticlePage({super.key, required this.article, required this.tag});
+
+  /// Constructs an instance of [ArticlePage].
+  ///
+  /// The [article] parameter is required and represents the article to be displayed.
+  /// The [tag] parameter is required and represents the hero tag for the article image.
+  const ArticlePage({Key? key, required this.article, required this.tag})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

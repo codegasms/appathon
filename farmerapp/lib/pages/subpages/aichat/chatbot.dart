@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 
 import 'constant.dart';
 
+/// A chat view widget that allows users to interact with a chatbot.
 class ChatView extends StatefulWidget {
   const ChatView({Key? key}) : super(key: key);
 
@@ -21,6 +22,12 @@ class _ChatViewState extends State<ChatView> {
 
   final header = {'Content-Type': 'application/json'};
 
+  /// Retrieves chatbot responses based on user messages.
+  ///
+  /// Inserts the user message into the list of all messages and adds the bot user to the list of typing users.
+  /// Sends a POST request to the chatbot API with the user message as input.
+  /// Inserts the bot's response into the list of all messages.
+  /// Removes the bot user from the list of typing users.
   getMessages(ChatMessage m) async {
     allMessages.insert(0, m);
     typing.add(bot);

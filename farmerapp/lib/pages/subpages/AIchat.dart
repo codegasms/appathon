@@ -6,6 +6,7 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+/// A page that displays a chat interface with an AI chatbot.
 class ChatPage extends StatefulWidget {
   const ChatPage({
     Key? key,
@@ -14,10 +15,18 @@ class ChatPage extends StatefulWidget {
     required this.user2Name,
     required this.promptText,
   }) : super(key: key);
-  final String promptText;
+
+  /// The first name of the user.
   final String firstName;
+
+  /// The last name of the user.
   final String lastName;
+
+  /// The name of the second user (AI chatbot).
   final String user2Name;
+
+  /// The prompt text for the chatbot.
+  final String promptText;
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -32,16 +41,19 @@ class _ChatPageState extends State<ChatPage> {
 
   final header = {'Content-Type': 'application/json'};
 
-  getMessages(ChatMessage m) async {
+  /// Retrieves the chat messages from the AI chatbot.
+  Future<void> getMessages(ChatMessage m) async {
     allMessages.insert(0, m);
     typing.add(bot);
     setState(() {});
+
     var promptText = """
           autocomplete this chat, ${widget.promptText} :
           ${(allMessages.length > 1) ? "you: ${allMessages[1].text}" : ""}
           user: ${m.text}
           you: (reply with whatever you want to complete here. dont reply all chats)
     """;
+
     var data = {
       "contents": [
         {
@@ -51,6 +63,7 @@ class _ChatPageState extends State<ChatPage> {
         }
       ]
     };
+
     await http
         .post(Uri.parse(url), headers: header, body: jsonEncode(data))
         .then((value) {
@@ -64,6 +77,7 @@ class _ChatPageState extends State<ChatPage> {
         allMessages.insert(0, m2);
       }
     }).catchError((e) {});
+
     typing.remove(bot);
     setState(() {});
   }
@@ -124,8 +138,9 @@ class _ChatPageState extends State<ChatPage> {
   }
 }
 
+/// A page that displays the AI chat interface.
 class AiChatPage extends StatelessWidget {
-  const AiChatPage({super.key});
+  const AiChatPage({Key? key});
 
   @override
   Widget build(BuildContext context) {

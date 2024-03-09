@@ -2,10 +2,14 @@ import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:farmerapp/pages/subpages/articles.dart';
 import 'package:flutter/material.dart';
 
+/// A page that displays the details of an article and allows the user to buy it.
 class BuyPage extends StatefulWidget {
   final ArticleItem article;
   final String tag;
-  const BuyPage({super.key, required this.article, required this.tag});
+
+  /// Constructs a [BuyPage] with the given [article] and [tag].
+  const BuyPage({Key? key, required this.article, required this.tag})
+      : super(key: key);
 
   @override
   State<BuyPage> createState() => _BuyPageState();
@@ -17,6 +21,13 @@ class _BuyPageState extends State<BuyPage> {
   int sp = 0;
   int cp = 0;
 
+  /// Increments the value of the specified field by the given [value].
+  ///
+  /// The [which] parameter determines which field to increment:
+  /// - 0: production
+  /// - 1: consumption
+  /// - 2: sp
+  /// - 3: cp
   void increment(int value, int which) {
     setState(() {
       switch (which) {
@@ -36,6 +47,13 @@ class _BuyPageState extends State<BuyPage> {
     });
   }
 
+  /// Decrements the value of the specified field by the given [value].
+  ///
+  /// The [which] parameter determines which field to decrement:
+  /// - 0: production
+  /// - 1: consumption
+  /// - 2: sp
+  /// - 3: cp
   void decrement(int value, int which) {
     setState(() {
       switch (which) {
@@ -150,10 +168,6 @@ class _BuyPageState extends State<BuyPage> {
                               .getTranslatedValue("buy")
                               .toString(),
                         ),
-                        // style: ButtonStyle(
-                        //     // backgroundColor:
-                        //     // MaterialStateProperty.all(Colors.green),
-                        //     ),
                       ),
                     ],
                   ),

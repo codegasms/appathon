@@ -37,6 +37,18 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
   int spSet = 0;
   int cpSet = 0;
 
+  /// Increments the value of the specified variable based on the given value and which parameter.
+  ///
+  /// The [value] parameter represents the amount to increment.
+  /// The [which] parameter represents which variable to increment:
+  /// - 0: production
+  /// - 1: consumption
+  /// - 2: sp
+  /// - 3: cp
+  /// - 4: productionSet
+  /// - 5: consumptionSet
+  /// - 6: spSet
+  /// - 7: cpSet
   void increment(int value, int which) {
     setState(() {
       switch (which) {
@@ -64,6 +76,14 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
     });
   }
 
+  /// Decrements the value of the specified variable based on the given value and which parameter.
+  ///
+  /// The [value] parameter represents the amount to decrement.
+  /// The [which] parameter represents which variable to decrement:
+  /// - 0: production
+  /// - 1: consumption
+  /// - 2: sp
+  /// - 3: cp
   void decrement(int value, int which) {
     setState(() {
       switch (which) {

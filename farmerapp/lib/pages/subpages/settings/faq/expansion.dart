@@ -1,3 +1,16 @@
+/// FILEPATH: /home/SahooBishwajeet/College/AppAThon/appathon/farmerapp/lib/pages/subpages/settings/faq/expansion.dart
+///
+/// This file contains the implementation of the [ExpansionPanelListExample] widget, which displays a list of expansion panels with FAQ items.
+/// The FAQ items are fetched using the [AppLocalization] class to get the translated values.
+///
+/// The [ExpansionPanelListExample] widget is a stateful widget that extends [StatefulWidget].
+/// It creates an instance of [_ExpansionPanelListExampleState] as its state.
+///
+/// The [_ExpansionPanelListExampleState] class is the state class for the [ExpansionPanelListExample] widget.
+/// It overrides the [build] method to build the UI for the widget.
+/// The UI consists of a [SingleChildScrollView] containing a [Column] of [Card]s.
+/// Each [Card] represents an expansion panel and contains a [Column] of [Text] widgets to display the FAQ items.
+/// The FAQ items are fetched using the [AppLocalization] class to get the translated values.
 import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:flutter/material.dart';
 

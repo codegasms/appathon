@@ -1,3 +1,23 @@
+/// FILEPATH: /home/SahooBishwajeet/College/AppAThon/appathon/farmerapp/lib/pages/subpages/marketplace.dart
+///
+/// This file contains the implementation of the `MarketplacePage` widget, which is responsible for displaying the marketplace page in the Farmer App.
+///
+/// The `MarketplacePage` widget is a stateful widget that maintains the current page index and a list of `ArticleItem` objects.
+/// It also includes text editing controllers for the product name, product description, and selling price.
+///
+/// The `MarketplacePage` widget consists of two main sections: the button bar and the content area.
+/// The button bar contains two elevated buttons for switching between the "Buy" and "Sell" pages.
+/// The content area displays either the "Buy" page or the "Sell" page based on the current page index.
+///
+/// The "Buy" page displays a list of `ArticleItem` widgets, each representing an article for sale.
+/// Tapping on an article item navigates to the `BuyPage` widget, passing the selected article and a tag as arguments.
+///
+/// The "Sell" page displays a form for selling a product.
+/// It includes dropdown buttons for selecting the product name, text form fields for entering the product description and selling price,
+/// and an elevated button for submitting the sell request.
+///
+/// The `MarketplacePage` widget also includes helper methods for building the "Buy" page and the "Sell" page,
+/// as well as a helper method for building a `listWidget` for each `ArticleItem`.
 import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:farmerapp/pages/subpages/articles.dart';
 import 'package:farmerapp/pages/subpages/marketplace/buypage.dart';

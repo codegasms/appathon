@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// A widget that represents a switch with a title and an icon in a settings page.
 class SettingSwitch extends StatelessWidget {
   final String title;
   final Color bgColor;
@@ -8,15 +9,19 @@ class SettingSwitch extends StatelessWidget {
   final IconData icon;
   final bool value;
   final Function(bool value) onTap;
+
+  /// Creates a [SettingSwitch].
+  ///
+  /// The [title], [bgColor], [iconColor], [icon], [value], and [onTap] parameters must not be null.
   const SettingSwitch({
-    super.key,
+    Key? key,
     required this.title,
     required this.bgColor,
     required this.iconColor,
     required this.icon,
     required this.value,
     required this.onTap,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

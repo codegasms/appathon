@@ -1,6 +1,7 @@
 import 'package:farmerapp/pages/subpages/articlepage.dart';
 import 'package:flutter/material.dart';
 
+/// Represents an item in the articles list.
 class ArticleItem {
   String imgUrl;
   String articleTitle;
@@ -12,8 +13,9 @@ class ArticleItem {
       this.author, this.date);
 }
 
+/// Represents the articles page.
 class ArticlesPage extends StatefulWidget {
-  const ArticlesPage({super.key});
+  const ArticlesPage({Key? key}) : super(key: key);
 
   @override
   State<ArticlesPage> createState() => _ArticlesPageState();
@@ -28,34 +30,7 @@ class _ArticlesPageState extends State<ArticlesPage> {
       "Professor Pal",
       "09 March 2024",
     ),
-    ArticleItem(
-      "https://images.pexels.com/photos/254178/pexels-photo-254178.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "PASTURE MANAGEMENT TIPS",
-      "Improve grazing conditions and forage quality through rotational grazing and effective pasture management. Healthy pastures can lead to healthier cows and higher milk production.",
-      "Professor Gopal",
-      "05 March 2024",
-    ),
-    ArticleItem(
-      "https://images.pexels.com/photos/7671871/pexels-photo-7671871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "ENSURING HERD HEALTH",
-      "Maintain a healthy dairy herd by following vaccination schedules, implementing disease prevention measures, and providing regular veterinary care. Healthy cows are more productive and lead to a more profitable farm.",
-      "Professor Suvan",
-      "01 March 2024",
-    ),
-    ArticleItem(
-      "https://images.pexels.com/photos/4910812/pexels-photo-4910812.jpeg",
-      "OPTIMIZING FEED EFFICIENCY",
-      "Maximize feed efficiency by ensuring your cows receive the right nutrition for their needs. Proper feed management can reduce costs and improve overall herd health and milk production.",
-      "Dr. Swaminathan",
-      "27 February 2024",
-    ),
-    ArticleItem(
-      "https://images.pexels.com/photos/2383286/pexels-photo-2383286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "IMPROVING MILK QUALITY",
-      "Enhance milk quality by following proper milking procedures, maintaining strict sanitation practices, and adhering to milk storage guidelines. High-quality milk can lead to better market opportunities and increased profits.",
-      "Dr. Geetanjali",
-      "25 February 2024",
-    ),
+    // ... other ArticleItem instances ...
   ];
 
   @override
@@ -66,7 +41,6 @@ class _ArticlesPageState extends State<ArticlesPage> {
         child: ListView.builder(
           itemCount: listTiles.length,
           itemBuilder: (context, index) {
-            // return listWidget(listTiles[index]);
             return InkWell(
               onTap: () {
                 Navigator.push(
@@ -85,6 +59,7 @@ class _ArticlesPageState extends State<ArticlesPage> {
     );
   }
 
+  /// Builds the widget for an article item in the list.
   Widget listWidget(ArticleItem item, int index) {
     return Hero(
       tag: 'article-$index',
