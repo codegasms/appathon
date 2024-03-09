@@ -111,8 +111,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 15),
-                        child: const Image(
-                          image: AssetImage('assets/avatar.png'),
+                        // child: const Image(
+                        //   image: AssetImage('assets/avatar.png'),
+                        // ),
+                        child: const Icon(
+                          Icons.shopping_cart_checkout_sharp,
+                          size: 60,
                         ),
                       ),
                       ListTile(
@@ -151,8 +155,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 15),
-                        child: const Image(
-                          image: AssetImage('assets/avatar.png'),
+                        // child: const Image(
+                        //   image: AssetImage('assets/avatar.png'),
+                        // ),
+                        child: const Icon(
+                          Icons.attach_money,
+                          size: 60,
                         ),
                       ),
                       ListTile(
@@ -191,8 +199,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 15),
-                        child: const Image(
-                          image: AssetImage('assets/avatar.png'),
+                        // child: const Image(
+                        //   image: AssetImage('assets/avatar.png'),
+                        // ),
+                        child: const Icon(
+                          Icons.add_shopping_cart,
+                          size: 60,
                         ),
                       ),
                       ListTile(
@@ -231,8 +243,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 15),
-                        child: const Image(
-                          image: AssetImage('assets/avatar.png'),
+                        // child: const Image(
+                        //   image: AssetImage('assets/avatar.png'),
+                        // ),
+                        child: const Icon(
+                          Icons.money_off,
+                          size: 60,
                         ),
                       ),
                       ListTile(
