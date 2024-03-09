@@ -151,5 +151,10 @@
     "curd": "Curd",
     "paneer": "Paneer",
     "butter": "Butter",
-    "ghee": "Ghee"
+    "ghee": "Ghee",
+    "home": "Home",
+    "articles": "Articles",
+    "ai": "AI Chat",
+    "market": "Marketplace",
+    "user": "User Profile"
 }

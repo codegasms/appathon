@@ -1,3 +1,4 @@
+import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:farmerapp/pages/subpages/analytics.dart';
 import 'package:farmerapp/pages/subpages/articles.dart';
 import 'package:farmerapp/pages/subpages/AIchat.dart';
@@ -18,11 +19,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
 
   final pages = [
-    AnalyticsPage(),
-    ArticlesPage(),
-    AiChatPage(),
-    MarketplacePage(),
-    ProfilePage()
+    const AnalyticsPage(),
+    const ArticlesPage(),
+    const AiChatPage(),
+    const MarketplacePage(),
+    const ProfilePage()
   ];
 
   @override
@@ -56,26 +57,35 @@ class _MyHomePageState extends State<MyHomePage> {
         type: BottomNavigationBarType.shifting,
         selectedItemColor: Theme.of(context).colorScheme.primary,
         unselectedItemColor: Theme.of(context).colorScheme.inversePrimary,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: const Icon(Icons.home),
+            label: AppLocalization.of(context)
+                .getTranslatedValue("home")
+                .toString(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.article),
-            label: 'Articles',
+            icon: const Icon(Icons.article),
+            label: AppLocalization.of(context)
+                .getTranslatedValue("articles")
+                .toString(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'AI Chat',
+            icon: const Icon(Icons.chat),
+            label:
+                AppLocalization.of(context).getTranslatedValue("ai").toString(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Marketplace',
+            icon: const Icon(Icons.shopping_cart),
+            label: AppLocalization.of(context)
+                .getTranslatedValue("market")
+                .toString(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'User Profile',
+            icon: const Icon(Icons.person),
+            label: AppLocalization.of(context)
+                .getTranslatedValue("user")
+                .toString(),
           ),
         ],
       ),
