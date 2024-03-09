@@ -1,5 +1,5 @@
+import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AnalyticsPage extends StatefulWidget {
@@ -32,10 +32,10 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
   int sp = 0;
   int cp = 0;
 
-  int production_set = 0;
-  int consumption_set = 0;
-  int sp_set = 0;
-  int cp_set = 0;
+  int productionSet = 0;
+  int consumptionSet = 0;
+  int spSet = 0;
+  int cpSet = 0;
 
   void increment(int value, int which) {
     setState(() {
@@ -53,13 +53,13 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
           cp += value;
           break;
         case 4:
-          production_set += value;
+          productionSet += value;
         case 5:
-          consumption_set += value;
+          consumptionSet += value;
         case 6:
-          sp_set += value;
+          spSet += value;
         case 7:
-          cp_set += value;
+          cpSet += value;
       }
     });
   }
@@ -92,9 +92,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const Text(
-                  'Add Today\'s Data',
-                  style: TextStyle(
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("add_today")
+                      .toString(),
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.normal,
                   ),
@@ -113,10 +115,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                           image: AssetImage('assets/avatar.png'),
                         ),
                       ),
-                      const ListTile(
+                      ListTile(
                         title: Text(
-                          "Today's Milk Production",
-                          style: TextStyle(
+                          AppLocalization.of(context)
+                              .getTranslatedValue("today_milk")
+                              .toString(),
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
                         ),
                       ),
@@ -151,10 +155,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                           image: AssetImage('assets/avatar.png'),
                         ),
                       ),
-                      const ListTile(
+                      ListTile(
                         title: Text(
-                          "Amount Earned Today",
-                          style: TextStyle(
+                          AppLocalization.of(context)
+                              .getTranslatedValue("today_earn")
+                              .toString(),
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
                         ),
                       ),
@@ -189,10 +195,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                           image: AssetImage('assets/avatar.png'),
                         ),
                       ),
-                      const ListTile(
+                      ListTile(
                         title: Text(
-                          "Today's Food/Fodder Consumption",
-                          style: TextStyle(
+                          AppLocalization.of(context)
+                              .getTranslatedValue("today_consumption")
+                              .toString(),
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
                         ),
                       ),
@@ -204,7 +212,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                             onPressed: () => decrement(2, 1),
                           ),
                           Text(
-                            "$consumption Kilos",
+                            "$consumption Kilograms",
                             style: const TextStyle(fontSize: 18),
                           ),
                           IconButton(
@@ -227,10 +235,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                           image: AssetImage('assets/avatar.png'),
                         ),
                       ),
-                      const ListTile(
+                      ListTile(
                         title: Text(
-                          "Amount Spent Today",
-                          style: TextStyle(
+                          AppLocalization.of(context)
+                              .getTranslatedValue("today_spent")
+                              .toString(),
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
                         ),
                       ),
@@ -271,8 +281,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                       decrement(sp, 2);
                       decrement(cp, 3);
                     },
-                    child: const Text('Add To Analytics',
-                        style: TextStyle(
+                    child: Text(
+                        AppLocalization.of(context)
+                            .getTranslatedValue("add_to_anal")
+                            .toString(),
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
                 ),
@@ -284,9 +297,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Text(
-              'Milk Production Analytics',
-              style: TextStyle(
+            Text(
+              AppLocalization.of(context)
+                  .getTranslatedValue("milk_anal")
+                  .toString(),
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -314,10 +329,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Today's Production:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("tpro")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -326,7 +343,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '$production_set Litres',
+                  '$productionSet Litres',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -342,10 +359,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Weekly Production:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("wpro")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -354,7 +373,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '${376 + production_set} Litres',
+                  '${376 + productionSet} Litres',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -367,9 +386,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              'Food/Fodder Consumption Analytics',
-              style: TextStyle(
+            Text(
+              AppLocalization.of(context)
+                  .getTranslatedValue("ff_anal")
+                  .toString(),
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -397,10 +418,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Today's Consumption:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("tcon")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -409,7 +432,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '$consumption_set Kilograms',
+                  '$consumptionSet Kilograms',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -425,10 +448,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Weekly Consumption:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("wcon")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -437,7 +462,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '${46 + consumption_set} Kilograms',
+                  '${46 + consumptionSet} Kilograms',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -450,9 +475,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              'Total Earning Analytics',
-              style: TextStyle(
+            Text(
+              AppLocalization.of(context)
+                  .getTranslatedValue("earn_anal")
+                  .toString(),
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -480,10 +507,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Today's Earning:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("tearn")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -492,7 +521,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '₹ $sp_set',
+                  '₹ $spSet',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -508,10 +537,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Weekly Earning:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("wearn")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -520,7 +551,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '₹ ${12350 + sp_set}',
+                  '₹ ${12350 + spSet}',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -533,9 +564,11 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              'Total Expenditure Analytics',
-              style: TextStyle(
+            Text(
+              AppLocalization.of(context)
+                  .getTranslatedValue("spent_anal")
+                  .toString(),
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -563,10 +596,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Today's Expenditure:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("tspen")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -575,7 +610,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '₹ $cp_set',
+                  '₹ $cpSet',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -591,10 +626,12 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Weekly Expenditure:",
+                Text(
+                  AppLocalization.of(context)
+                      .getTranslatedValue("wspen")
+                      .toString(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -603,7 +640,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   width: 10,
                 ),
                 Text(
-                  '₹ ${3120 + cp_set}',
+                  '₹ ${3120 + cpSet}',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     fontSize: 18,
@@ -745,7 +782,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const FlSpot(4, 86),
             const FlSpot(5, 52),
             const FlSpot(6, 72),
-            FlSpot(7, production_set.toDouble()),
+            FlSpot(7, productionSet.toDouble()),
           ],
           isCurved: true,
           gradient: LinearGradient(
@@ -851,7 +888,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const FlSpot(4, 12),
             const FlSpot(5, 14),
             const FlSpot(6, 8),
-            FlSpot(7, consumption_set.toDouble()),
+            FlSpot(7, consumptionSet.toDouble()),
           ],
           isCurved: true,
           gradient: LinearGradient(
@@ -957,7 +994,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const FlSpot(4, 2510),
             const FlSpot(5, 1900),
             const FlSpot(6, 2220),
-            FlSpot(7, sp_set.toDouble()),
+            FlSpot(7, spSet.toDouble()),
           ],
           isCurved: true,
           gradient: LinearGradient(
@@ -1063,7 +1100,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
             const FlSpot(4, 780),
             const FlSpot(5, 860),
             const FlSpot(6, 500),
-            FlSpot(7, cp_set.toDouble()),
+            FlSpot(7, cpSet.toDouble()),
           ],
           isCurved: true,
           gradient: LinearGradient(
