@@ -139,5 +139,17 @@
     "wearn": "Weekly Earnings:",
     "spent_anal": "Total Spent Analytics",
     "tspen": "Today's Spent:",
-    "wspen": "Weekly Spent:"
+    "wspen": "Weekly Spent:",
+    "buy": "Buy",
+    "sell": "Sell",
+    "quantity": "Quantity",
+    "sell_page": "Sell Page",
+    "product_n": "Product Name",
+    "product_d": "Product Description",
+    "product_sp": "Desired Selling Price",
+    "milk": "Milk",
+    "curd": "Curd",
+    "paneer": "Paneer",
+    "butter": "Butter",
+    "ghee": "Ghee"
 }

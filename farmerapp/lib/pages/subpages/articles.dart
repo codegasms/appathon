@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:farmerapp/pages/subpages/articlepage.dart';
 import 'package:flutter/material.dart';
 
