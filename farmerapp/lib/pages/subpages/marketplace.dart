@@ -1,3 +1,4 @@
+import 'package:farmerapp/localization/app_localizations.dart';
 import 'package:farmerapp/pages/subpages/articles.dart';
 import 'package:farmerapp/pages/subpages/marketplace/buypage.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +18,7 @@ class _MarketplacePageState extends State<MarketplacePage> {
 
   List<ArticleItem> listTiles = [
     ArticleItem(
-      "https://images.pexels.com/photos/2647053/pexels-photo-2647053.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/9487554/pexels-photo-9487554.jpeg?auto=compress&cs=tinysrgb&w=400",
       "Cow Fodder",
       "High quality Cow Fodder imported from abroad sold by Raju from XYZ place.",
       "Raju",
@@ -31,21 +32,21 @@ class _MarketplacePageState extends State<MarketplacePage> {
       "\u20B9 200",
     ),
     ArticleItem(
-      "https://images.pexels.com/photos/2647053/pexels-photo-2647053.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/9487554/pexels-photo-9487554.jpeg?auto=compress&cs=tinysrgb&w=400",
       "Buffalo Fodder",
       "High quality Buffalo Fodder imported from abroad sold by Shankar from XYZ place.",
       "Shankar",
       "\u20B9 200 ",
     ),
     ArticleItem(
-      "https://images.pexels.com/photos/2647053/pexels-photo-2647053.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2889347/pexels-photo-2889347.jpeg?auto=compress&cs=tinysrgb&w=400",
       "Equipment",
       "High quality Cow and Buffalo Equipment imported from abroad sold by Govind from XYZ place.",
       "Govind",
       "\u20B9 200 ",
     ),
     ArticleItem(
-      "https://images.pexels.com/photos/2647053/pexels-photo-2647053.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/14187132/pexels-photo-14187132.jpeg?auto=compress&cs=tinysrgb&w=400",
       "Bells",
       "High quality Bells imported from abroad sold by Rammu from XYZ place.",
       "Rammu",
@@ -89,7 +90,11 @@ class _MarketplacePageState extends State<MarketplacePage> {
                 minimumSize:
                     MaterialStateProperty.all(Size(context.width * 0.4, 50)),
               ),
-              child: const Text('Buy'),
+              child: Text(
+                AppLocalization.of(context)
+                    .getTranslatedValue("buy")
+                    .toString(),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -102,7 +107,11 @@ class _MarketplacePageState extends State<MarketplacePage> {
                 minimumSize:
                     MaterialStateProperty.all(Size(context.width * 0.4, 50)),
               ),
-              child: const Text('Sell'),
+              child: Text(
+                AppLocalization.of(context)
+                    .getTranslatedValue("sell")
+                    .toString(),
+              ),
             ),
           ],
         ),
@@ -117,25 +126,23 @@ class _MarketplacePageState extends State<MarketplacePage> {
   Widget drawBuyPage() {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-      child: Container(
-        child: ListView.builder(
-          itemCount: listTiles.length,
-          itemBuilder: (context, index) {
-            // return listWidget(listTiles[index]);
-            return InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => BuyPage(
-                              article: listTiles[index],
-                              tag: 'shop-$index',
-                            )));
-              },
-              child: listWidget(listTiles[index], index),
-            );
-          },
-        ),
+      child: ListView.builder(
+        itemCount: listTiles.length,
+        itemBuilder: (context, index) {
+          // return listWidget(listTiles[index]);
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BuyPage(
+                            article: listTiles[index],
+                            tag: 'shop-$index',
+                          )));
+            },
+            child: listWidget(listTiles[index], index),
+          );
+        },
       ),
     );
   }
@@ -143,12 +150,14 @@ class _MarketplacePageState extends State<MarketplacePage> {
   Widget drawSellPage() {
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
         child: Column(
           children: [
-            const Text(
-              "Sell Page",
-              style: TextStyle(fontSize: 20),
+            Text(
+              AppLocalization.of(context)
+                  .getTranslatedValue("sell_page")
+                  .toString(),
+              style: const TextStyle(fontSize: 20),
             ),
             DropdownButtonFormField<String>(
               value: productNameController.text,
@@ -157,47 +166,73 @@ class _MarketplacePageState extends State<MarketplacePage> {
                   productNameController.text = value!;
                 });
               },
-              decoration: const InputDecoration(
-                labelText: "Product Name",
+              decoration: InputDecoration(
+                labelText: AppLocalization.of(context)
+                    .getTranslatedValue("product_n")
+                    .toString(),
               ),
               items: [
                 DropdownMenuItem(
                   value: "milk",
-                  child: Text("Milk"),
+                  child: Text(
+                    AppLocalization.of(context)
+                        .getTranslatedValue("milk")
+                        .toString(),
+                  ),
                 ),
                 DropdownMenuItem(
                   value: "curd",
-                  child: Text("Curd"),
+                  child: Text(
+                    AppLocalization.of(context)
+                        .getTranslatedValue("curd")
+                        .toString(),
+                  ),
                 ),
                 DropdownMenuItem(
                   value: "paneer",
-                  child: Text("Paneer"),
+                  child: Text(
+                    AppLocalization.of(context)
+                        .getTranslatedValue("paneer")
+                        .toString(),
+                  ),
                 ),
                 DropdownMenuItem(
                   value: "butter",
-                  child: Text("Butter"),
+                  child: Text(
+                    AppLocalization.of(context)
+                        .getTranslatedValue("butter")
+                        .toString(),
+                  ),
                 ),
                 DropdownMenuItem(
                   value: "ghee",
-                  child: Text("Ghee"),
+                  child: Text(
+                    AppLocalization.of(context)
+                        .getTranslatedValue("ghee")
+                        .toString(),
+                  ),
                 ),
               ],
             ),
             TextFormField(
               controller: productDescriptionController,
-              decoration: const InputDecoration(
-                labelText: "Product Description",
+              decoration: InputDecoration(
+                labelText: AppLocalization.of(context)
+                    .getTranslatedValue("product_d")
+                    .toString(),
               ),
             ),
             TextFormField(
               controller: sellingPriceController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.currency_rupee),
-                labelText: "Desired Selling Price",
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.currency_rupee),
+                labelText: AppLocalization.of(context)
+                    .getTranslatedValue("product_sp")
+                    .toString(),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
@@ -211,7 +246,11 @@ class _MarketplacePageState extends State<MarketplacePage> {
                 productDescriptionController.clear();
                 sellingPriceController.clear();
               },
-              child: Text("Sell"),
+              child: Text(
+                AppLocalization.of(context)
+                    .getTranslatedValue("sell")
+                    .toString(),
+              ),
             ),
           ],
         ),
@@ -225,9 +264,9 @@ class _MarketplacePageState extends State<MarketplacePage> {
       child: Card(
         semanticContainer: false,
         elevation: 2.0,
-        margin: EdgeInsets.only(bottom: 20.0),
+        margin: const EdgeInsets.only(bottom: 20.0),
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
